@@ -5,7 +5,6 @@
 :root{
     --primary-color:#edf2fc;
     --secondary-color:#212121;
-
 }
 .dark-theme{
     --primary-color:#212121;
@@ -20,8 +19,6 @@ nav ul{
     flex:1;
     text-align: right;
 }
-
-
 
 .dai{
     height: 100vh;
