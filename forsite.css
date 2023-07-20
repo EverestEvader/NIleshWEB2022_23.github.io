@@ -76,7 +76,7 @@ span{
     background: #ff0000;
     padding: 10px 18px;
     text-decoration: none;
-    color:var(--primary-color);
+    color:var(--secondary-color);
     display: inline-block;
     margin: 30px 0;
     border-radius: 5px;
