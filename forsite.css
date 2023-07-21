@@ -189,13 +189,19 @@ span{
         display: inline-block;
         margin: 15px 0;
         border-radius: 5px;
-        font-size: 15px;
+        font-size: 20px;
     }
+    .social-links{
+        margin-left: 5%;
+        margin-top: 10px;
+    }
+
     .img-area{
+        display: none;
         flex-direction: column-reverse;
-        margin:50px 0;
-        width: 15%;
-        height: 40%;
+        margin:100px 0;
+        width: 55%;
+        height: 30%;
     }
    
 
