@@ -7,31 +7,41 @@
     </head>
     <body>
         <div class="dai">
-           <nav>
-            <img src="imgss/nilesh.png" width="100px" alt="official logo">
-            <ul>
+            <div class="nav-bar">
+                <img src="imgss/nilesh.png" width="100px" alt="official logo" class="logoo">
+                <nav>
+
+            <ul id="menuList">
                 <li><a href="">HOME</a></li>
                 <li><a href="">ABOUT</a></li>
                 <li><a href="">PORTFOLIO</a></li>
                 <li><a href=""></a></li>
             </ul>
-            <img src="imgss/sun.png" id="icon">
-           </nav> 
+            <img src="imgss/sun.png" id="icon">  
+            </nav>
+            <img src="imgss/menuicon.png" class="menulogo" 
+            onclick="togglemenu()"> 
+ 
+        </div>
+        
            <div class="info">
             <h1>It's <span>Nilesh</span> Karmacharya</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br> A voluptatibus laudantium totam, 
                 placeat tempore molestiae officiis illum incidunt<br> non corrupti expedita sint modi saepe 
                 culpa voluptatem, est ex velit aliquam.</p>
             <a href="">View my Class Assignment Here</a>
-            <a href="https://www.instagram.com/ishouldbestudyn/?igshid=MzNlNGNkZWQ4Mg%3D%3D">View my Ai Images Here</a>
+            <a href="https://www.instagram.com/ishouldbestudyn/?igshid=MzNlNGNkZWQ4Mg%3D%3D">
+                View my Ai Images Here</a>
         </div>
         <div class="img-area">
             <img src="imgss/nileshshadow.png" class="back-img">
             <img src="imgss/nilesh.png" class="main-img">
         </div>
         <div class="social-links">
-            <a href="https://www.instagram.com/ishouldbestudyn/?igshid=MzNlNGNkZWQ4Mg%3D%3D"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.facebook.com/people/Nilesh-Karmacharya/pfbid0kNdAGZrb5P1wiXM9dQfsAK8M9nTEngCntyizctha498UNCRAJLAgrmTh1D2YvjkAl/?mibextid=ZbWKwL"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/ishouldbestudyn/?igshid=MzNlNGNkZWQ4Mg%3D%3D">
+                <i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/people/Nilesh-Karmacharya/pfbid0kNdAGZrb5P1wiXM9dQfsAK8M9nTEngCntyizctha498UNCRAJLAgrmTh1D2YvjkAl/?mibextid=ZbWKwL">
+                <i class="fab fa-facebook"></i></a>
             <a href=""></a>
             <a href=""></a>
         </div>
@@ -47,6 +57,25 @@
                 }
             }
         </script>
-        <p>Nilesh Karmacharya</p>
-    </body>
+
+        <script>   
+
+        var menuList = document.getElementById("menuList");
+        
+        menuList.style.maxHeight ="0px";
+        
+        function togglemenu(){
+        
+            if(menuList.style.maxHeight == "0px")
+        {
+            menuList.style.maxHeight = "130px";
+        }
+        else{
+            menuList.style.maxHeight = "0px";
+        }
+        }
+        
+        </script>
+   <!--lavander color= 9873AC--> 
+</body>
 </html>
