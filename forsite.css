@@ -146,7 +146,7 @@ span{
 
 
 
-@media only screen and (max-width: 1080px){
+@media only screen and (max-width: 1500px){
     nav ul{
         width:100%;
         background: #ff0000;
@@ -194,6 +194,11 @@ span{
     .social-links{
         margin-left: 5%;
         margin-top: 10px;
+    }
+    .social-links a{
+        font-size: 30px;
+        color:var(--secondary-color);
+       
     }
 
     .img-area{
