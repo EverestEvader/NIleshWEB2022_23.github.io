@@ -194,7 +194,6 @@ transition: 1s;
     font-size: 30px;
     color:var(--secondary-color);
     margin-right:20px;
-    box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.1);
     margin: 0 15px;
     border-radius: 50%;
 }
