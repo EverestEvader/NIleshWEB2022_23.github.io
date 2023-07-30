@@ -1,0 +1,40 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+.listing{
+    padding: 20px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    width: 300px;
+    font-family: sans-serif;
+    flex: 1;
+    text-align: left;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.listing {
+    margin-left: 30px;
+    color: var(--secondary-color);
+    line-height: 22px;
+}
+
+.listing a{
+    background: #ff0000;
+    padding: 10px 18px;
+    text-decoration: none;
+    color:beige;
+
+    display: inline-block;
+    margin: 30px 0;
+    border-radius: 5px;
+}
+.listing a:hover{
+    color:yellow;
+    transition:all 0.3s ease 0s;
+}
