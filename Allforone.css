@@ -4,6 +4,7 @@
 }
 
 .listing{
+    margin-top: 30px;
     padding: 20px;
     border: 2px solid #ddd;
     border-radius: 8px;
@@ -19,9 +20,14 @@
 
 
 .listing {
+    margin-top: 30px;
     margin-left: 30px;
     color: var(--secondary-color);
     line-height: 22px;
+}
+
+.listing h2{
+margin-top: ;
 }
 
 .listing a{
