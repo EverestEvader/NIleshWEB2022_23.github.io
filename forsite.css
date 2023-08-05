@@ -2,12 +2,13 @@
     margin:0;
     padding:0;
 }
+
 :root{
     --primary-color:#212121;
-    --secondary-color:#edf2fc;
+    --secondary-color:beige;
 }
 .dark-theme{
-    --primary-color:#fff;
+    --primary-color:beige;
     --secondary-color:#212121;
 }
 
