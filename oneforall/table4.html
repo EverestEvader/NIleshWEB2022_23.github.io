@@ -3,23 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Table4</title>
+    <title>Table Row span and cols span</title>
 </head>
 <body>
-    <table border=5 width=60% cellspacing=50>
-        <caption align="top"> <b>Personal Information</b></caption>
+    <table border="1" width="60%">
         <tr>
-        <th>Name</th>
-        <th>Age</th>
+            <td rowspan=2 colspan=2>A</td>
+            <td>B</td>
+            <td>C</td>
         </tr>
-        <tr align=center>
-        <td>Ram</td>
-        <td>24</td>
+        <tr>
+            <td colspan=2>D</td>
         </tr>
-        <tr align=center>
-        <td>Sita</td>
-        <td>22</td>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
         </tr>
-        </table>
-</body>
+        <tr>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+        </tr>
+    </table>
 </html>

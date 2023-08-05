@@ -1,28 +1,34 @@
 <!DOCTYPE html>
-<html >
+<html lang="en">
 <head>
-    
-    <title>Table attribute : Using bgcolor</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Row span and cols span 2</title>
 </head>
 <body>
-<center>
-    <table border="5" width="60%" cellspcing="15">
-        <caption align="top">
-            <b> Personal Information</b>
-        </caption>
+    <table border=5 width=60% >
+        <caption align="bottom"> <b>Marks Information</b></caption>
         <tr>
-            <th bgcolor="red"> Name</th>
-            <th bgcolor="gray"> Age</th>
+        <th rowspan=2>name</th>
+        <th  colspan=3>Marks</th>
         </tr>
-        <tr align="center">
-            <td bgcolor="green"> Ram</td>
-            <td bgcolor="blue"> 22</td>
+        <tr>
+        <th>web</th>
+        <th>ACA</th>
+        <th>Project</th>
         </tr>
-        <tr align="center">
-            <td> Sita</td>
-            <td>22</td>
+        <tr>
+        <td>Sita</td>
+        <td>A</td>
+        <td>B</td>
+        <td>A</td>
         </tr>
-    </table>
-</center>
+        <tr>
+        <td>Hari</td>
+        <td>B</td>
+        <td>B</td>
+        <td>A</td>
+        </tr>
+        </table>
 </body>
 </html>
