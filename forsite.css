@@ -112,7 +112,6 @@ nav ul li a:hover{
 
 /* Body part of Home page*/
 .info{
-
     margin-left: 2%;
     margin-top: 10%;
 }
@@ -128,8 +127,9 @@ span{
 }
 
 .info p{
+    
     color: var(--secondary-color);
-    line-height: 22px;
+    line-height: 30px;
 }
 .info a{
     background: #ff0000;
