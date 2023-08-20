@@ -238,11 +238,7 @@ transition: 1s;
     bottom: 200px;
   
   */
-.img-hero{
 
-    align-items: center;
-    text-align: center;
-}
 
 .mathi{
     font-family: sans-serif;
@@ -278,14 +274,31 @@ transition: 1s;
 
 /*  SOCIAL MEDIA */
 
-.social-links{
+.content {
+    padding: 20px;
+  }
+  
+  .footer {
+    font-family: sans-serif;
+   /*background-color:rgba(0, 0, 0, 0.582);*/
+    color:beige;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+  }
+  .footer p{
+    font-size: 16px;
+    font-family: sans-serif;
+    margin-bottom:20px ;
+  }
+  .social-links{
     /*display:flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;*/
     align-items: center;
     text-align: center;
-    margin-top: 200px;
+    margin-top: 20px;
     margin-bottom: 2%;
     bottom: 100px;
     
@@ -306,18 +319,6 @@ transition: 1s;
     transition:all 0.3s ease 0s;
 }
 
-
-.foooter{
-    color:var(--secondary-color);
-    align-items: center;
-    text-align: center;
-}
-
-.foooter footer{
-    margin-bottom: 5%;
-    align-items: center;
-    text-align: center;
-}
 
 /* ******##### RESPONSIVE #####****** */
 
