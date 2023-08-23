@@ -154,7 +154,7 @@ span{
 .box{
 width: 250px;
 margin: 0 10px;
-box-shadow: 0 0 20px 2px rgba(0, 0, 0, .3);
+/*box-shadow: 0 0 20px 2px rgba(0, 0, 0, .3);*/
 transition: 1s;
 
 }
@@ -183,7 +183,7 @@ transition: 1s;
 .box2{
 width: 250px;
 margin: 0 10px;
-box-shadow: 0 0 20px 2px rgba(0, 0, 0, .3);
+/*box-shadow: 0 0 20px 2px rgba(0, 0, 0, .3);*/
 transition: 1s;
 
 }
@@ -212,7 +212,7 @@ transition: 1s;
 .box3{
 width: 250px;
 margin: 0 10px;
-box-shadow: 0 0 20px 2px rgba(0, 0, 0, .3);
+/*box-shadow: 0 0 20px 2px rgba(0, 0, 0, .3);*/
 transition: 1s;
 
 }
