@@ -36,33 +36,24 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Image Carousel
-    const carousel = document.querySelector('.carousel-inner');
-    const carouselItems = document.querySelectorAll('.carousel-item');
-    const prevBtn = document.querySelector('.carousel-control.prev');
-    const nextBtn = document.querySelector('.carousel-control.next');
-    let currentIndex = 0;
-    const itemWidth = 100; // Percentage
-
-    function updateCarousel() {
-        carousel.style.transform = `translateX(-${currentIndex * itemWidth}%)`;
-    }
-
-    nextBtn.addEventListener('click', function() {
-        currentIndex = (currentIndex + 1) % carouselItems.length;
-        updateCarousel();
+    // Image Protection System
+    document.querySelectorAll('.portfolio-item, .client-item').forEach(item => {
+        // Add watermark overlay
+        const watermark = document.createElement('div');
+        watermark.className = 'watermark';
+        item.appendChild(watermark);
+        
+        // Prevent right-click saving
+        item.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            alert('Image downloading is disabled to protect the artist\'s work.');
+        });
     });
 
-    prevBtn.addEventListener('click', function() {
-        currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
-        updateCarousel();
+    // Disable drag-and-drop for protected images
+    document.querySelectorAll('.portfolio-item img, .client-item img').forEach(img => {
+        img.setAttribute('draggable', 'false');
     });
-
-    // Auto-rotate carousel
-    setInterval(function() {
-        currentIndex = (currentIndex + 1) % carouselItems.length;
-        updateCarousel();
-    }, 5000);
 
     // Testimonial Carousel
     const testimonialItems = document.querySelectorAll('.testimonial-item');
@@ -70,62 +61,4 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentTestimonial = 0;
 
     function showTestimonial(index) {
-        testimonialItems.forEach(item => item.classList.remove('active'));
-        dots.forEach(dot => dot.classList.remove('active'));
-        
-        testimonialItems[index].classList.add('active');
-        dots[index].classList.add('active');
-    }
-
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', function() {
-            currentTestimonial = index;
-            showTestimonial(currentTestimonial);
-        });
-    });
-
-    // Auto-rotate testimonials
-    setInterval(function() {
-        currentTestimonial = (currentTestimonial + 1) % testimonialItems.length;
-        showTestimonial(currentTestimonial);
-    }, 7000);
-
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-
-    // Set current year in footer
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Animation on scroll
-    const animateOnScroll = function() {
-        const elements = document.querySelectorAll('.hero h1, .hero .subtitle, .hero .btn, .section-title, .zigzag-content, .zigzag-image');
-        
-        elements.forEach(element => {
-            const elementPosition = element.getBoundingClientRect().top;
-            const screenPosition = window.innerHeight / 1.2;
-            
-            if (elementPosition < screenPosition) {
-                element.style.opacity = '1';
-                element.style.transform = 'translateY(0)';
-            }
-        });
-    };
-    
-    // Initialize animations
-    window.addEventListener('scroll', animateOnScroll);
-    window.addEventListener('load', animateOnScroll);
-});
+       

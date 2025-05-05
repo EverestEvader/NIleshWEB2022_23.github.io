@@ -9,6 +9,7 @@
     --transition: all 0.3s ease;
     --border-radius: 8px;
     --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --spacing: 30px;
 }
 
 * {
@@ -200,6 +201,13 @@ section {
     z-index: -1;
 }
 
+.hero .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
 .hero-content {
     max-width: 600px;
 }
@@ -222,68 +230,25 @@ section {
     opacity: 0;
 }
 
-/* Carousel */
-.carousel-section {
-    padding: 60px 0;
-    background-color: var(--dark-secondary);
-}
-
-.carousel {
-    position: relative;
-    max-width: 1000px;
-    margin: 0 auto;
-    overflow: hidden;
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-}
-
-.carousel-inner {
+.hero-logo {
+    flex: 1;
     display: flex;
-    transition: transform 0.5s ease;
-}
-
-.carousel-item {
-    min-width: 100%;
-}
-
-.carousel-item img {
-    width: 100%;
-    height: 500px;
-    object-fit: cover;
-}
-
-.carousel-control {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 50px;
-    height: 50px;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 1.2rem;
-    display: flex;
-    align-items: center;
     justify-content: center;
-    z-index: 10;
-    transition: var(--transition);
 }
 
-.carousel-control:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-.carousel-control.prev {
-    left: 20px;
-}
-
-.carousel-control.next {
-    right: 20px;
+.hero-logo img {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    animation: fadeIn 1s ease 0.4s forwards;
+    opacity: 0;
 }
 
 /* Zigzag Sections */
+.zigzag {
+    padding: 80px 0;
+}
+
 .zigzag-item {
     display: flex;
     align-items: center;
@@ -328,69 +293,48 @@ section {
     transform: scale(1.05);
 }
 
-/* Portfolio */
+/* Portfolio Section */
 .portfolio {
     background-color: var(--dark-secondary);
+    padding: 80px 0;
+}
+
+.portfolio-category {
+    margin-bottom: 80px;
+}
+
+.portfolio-category:last-child {
+    margin-bottom: 0;
+}
+
+.portfolio-category h3 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--primary-color);
 }
 
 .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--spacing);
 }
 
 .portfolio-item {
     position: relative;
     border-radius: var(--border-radius);
     overflow: hidden;
-    height: 300px;
+    background-color: var(--dark-bg);
+    transition: var(--transition);
 }
 
 .portfolio-item img {
     width: 100%;
-    height: 100%;
+    height: 300px;
     object-fit: cover;
     transition: var(--transition);
 }
-.portfolio-filter {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-bottom: 40px;
-}
-
-.filter-btn {
-    padding: 8px 20px;
-    background-color: transparent;
-    border: 1px solid var(--gray-text);
-    color: var(--gray-text);
-    border-radius: 30px;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.filter-btn.active, .filter-btn:hover {
-    background-color: var(--primary-color);
-    color: var(--light-text);
-    border-color: var(--primary-color);
-}
-
-/* Ensure proper image ratios for each category */
-.portfolio-item[data-category="logos"] {
-    aspect-ratio: 1/1; /* Square for logos */
-}
-
-.portfolio-item[data-category="thumbnails"],
-.portfolio-item[data-category="esports"] {
-    aspect-ratio: 16/9; /* Wide rectangle for thumbnails/esports */
-}
-
-.portfolio-item[data-category="posters"] {
-    /* Posters can be any size - will maintain original ratio */
-    height: auto;
-}
-
 
 .portfolio-overlay {
     position: absolute;
@@ -398,7 +342,7 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(108, 99, 255, 0.8);
+    background: rgba(108, 99, 255, 0.9);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -424,7 +368,20 @@ section {
 }
 
 .portfolio-item:hover img {
-    transform: scale(1.1);
+    transform: scale(1.05);
+}
+
+/* Watermark Protection */
+.watermark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400"><text x="50%" y="50%" fill="rgba(255,255,255,0.1)" font-family="Arial" font-size="40" font-weight="bold" text-anchor="middle" dominant-baseline="middle" transform="rotate(-45 200 200)">YOURNAME</text></svg>');
+    pointer-events: none;
+    z-index: 2;
+    user-select: none;
 }
 
 /* Clients Carousel */
@@ -599,8 +556,8 @@ section {
 }
 
 .social-links a {
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
     background-color: var(--dark-secondary);
     display: flex;
@@ -611,36 +568,22 @@ section {
 }
 
 .social-links a:hover {
-    background-color: var(--primary-color);
     transform: translateY(-5px);
 }
 
-/* Social Icons Update */
-.social-links a {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: var(--dark-secondary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    transition: var(--transition);
+.social-links a:nth-child(1):hover { /* Facebook */
+    background-color: #1877f2;
+    color: white;
 }
 
-.social-links a:hover {
-    background-color: var(--primary-color);
-    transform: translateY(-5px);
+.social-links a:nth-child(2):hover { /* Instagram */
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    color: white;
 }
 
-/* Facebook blue on hover */
-.social-links a .fa-facebook-f:hover {
-    color: #1877f2;
-}
-
-/* Discord purple on hover */
-.social-links a .fa-discord:hover {
-    color: #5865f2;
+.social-links a:nth-child(3):hover { /* Discord */
+    background-color: #5865f2;
+    color: white;
 }
 
 /* Footer */
@@ -749,6 +692,19 @@ section {
 
 /* Responsive Styles */
 @media (max-width: 992px) {
+    .hero .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content {
+        margin-bottom: 50px;
+    }
+
+    .hero-logo img {
+        max-width: 300px;
+    }
+
     .zigzag-item {
         flex-direction: column;
         gap: 30px;
@@ -764,10 +720,6 @@ section {
 
     .section-title {
         font-size: 2.2rem;
-    }
-
-    .carousel-item img {
-        height: 400px;
     }
 }
 
@@ -814,10 +766,6 @@ section {
 
     .hero h1 {
         font-size: 2.2rem;
-    }
-
-    .carousel-item img {
-        height: 300px;
     }
 
     .testimonial-author {
