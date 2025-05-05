@@ -340,7 +340,7 @@ section {
 /* Cover Grid - flexible sizing */
 .cover-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--spacing);
 }
 
@@ -365,7 +365,8 @@ section {
 /* Flexible aspect ratio for posters and covers */
 .poster-grid .portfolio-item,
 .cover-grid .portfolio-item {
-    height: auto;
+    height: fit-content;
+    width: fit-content;
 }
 
 .portfolio-item img {
@@ -789,7 +790,7 @@ section {
   .portfolio-item img {
     pointer-events: none;
   }
-  
+
 /* Back to Top */
 .back-to-top {
     position: fixed;
