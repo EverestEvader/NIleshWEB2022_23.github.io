@@ -2,44 +2,41 @@ document.addEventListener('DOMContentLoaded', function() {
     // ======================
     // Navigation Functionality
     // ======================
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.navlinks');
-    
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
     
     // Mobile menu toggle
-    hamburger.addEventListener('click', function() {
-        this.classList.toggle('active');
-        navLinks.classList.toggle('active');
-
-        // Toggle body overflow to prevent scrolling when menu is open
-        if (navLinks.classList.contains('active')) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = 'auto';
-        }
-    });
-
-    // Close menu when clicking a link
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', function() {
-            hamburger.classList.remove('active');
-            navLinks.classList.remove('active');
-            document.body.style.overflow = 'auto';
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', function() {
+            this.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : 'auto';
         });
-    });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        });
+    }
 
     // ======================
     // Navbar scroll effect
     // ======================
     const navbar = document.querySelector('.navbar');
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 100) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    });
-
+    if (navbar) {
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    }
+    
     // ======================
     // Back to Top Button
     // ======================
@@ -53,7 +50,8 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-// ======================
+
+    // ======================
     // Image Protection System
     // ======================
     const protectionOverlay = document.createElement('div');
@@ -67,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="protected-content">
             <span class="close-modal">&times;</span>
             <p>Image downloading is disabled to protect the artist's work.</p>
-            <p>For inquiries about licensing or usage, please contact me.</p>
+            <p>For inquiries about usage, please contact me.</p>
             <a href="#contact" class="btn">Contact Me</a>
         </div>
     `;
@@ -77,14 +75,9 @@ document.addEventListener('DOMContentLoaded', function() {
     function protectImages() {
         document.querySelectorAll('.portfolio-item, .client-item, .testimonial-author').forEach(item => {
             // Add watermark overlay
-            const watermark = document.createElement('div');
-            watermark.className = 'watermark';
-            item.appendChild(watermark);
-            
-            // Add transparent click shield
-            const clickShield = document.createElement('div');
-            clickShield.className = 'click-shield';
-            item.appendChild(clickShield);
+            //const watermark = document.createElement('div');
+            //watermark.className = 'watermark';
+            //item.appendChild(watermark);
             
             // Disable pointer events on images
             const images = item.querySelectorAll('img');
@@ -92,16 +85,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 img.style.pointerEvents = 'none';
                 img.setAttribute('draggable', 'false');
                 img.setAttribute('unselectable', 'on');
-                
-                // Replace src with data-src to prevent direct access
-                if (!img.hasAttribute('data-protected')) {
-                    const src = img.src;
-                    img.setAttribute('data-protected-src', src);
-                    img.removeAttribute('src');
-                    img.style.backgroundImage = `url('${src}')`;
-                    img.style.backgroundSize = 'cover';
-                    img.style.backgroundPosition = 'center';
-                }
             });
         });
     }
@@ -173,23 +156,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // Open lightbox
     document.querySelectorAll('.portfolio-item').forEach(item => {
         item.addEventListener('click', function() {
-            const imgSrc = this.querySelector('img').getAttribute('data-protected-src') || 
-                         this.querySelector('img').src;
+            const imgSrc = this.querySelector('img').src;
             const title = this.querySelector('.portfolio-overlay h3')?.textContent || '';
             
             lightbox.style.display = 'block';
             document.body.style.overflow = 'hidden';
-            
-            // Use blurred placeholder first
-            lightboxImg.style.filter = 'blur(20px)';
-            lightboxImg.src = '';
-            
-            // Load image after a delay to prevent easy saving
-            setTimeout(() => {
-                lightboxImg.src = imgSrc;
-                lightboxImg.style.filter = 'none';
-            }, 300);
-            
+            lightboxImg.src = imgSrc;
             lightboxCaption.textContent = title;
         });
     });
@@ -263,7 +235,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function pauseAnimation() {
-        animationPaused = true;
+        animationPaused = false;
         if (clientTrack) {
             clientTrack.style.animationPlayState = 'paused';
         }
