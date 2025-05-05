@@ -352,6 +352,45 @@ section {
     object-fit: cover;
     transition: var(--transition);
 }
+.portfolio-filter {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.filter-btn {
+    padding: 8px 20px;
+    background-color: transparent;
+    border: 1px solid var(--gray-text);
+    color: var(--gray-text);
+    border-radius: 30px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.filter-btn.active, .filter-btn:hover {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    border-color: var(--primary-color);
+}
+
+/* Ensure proper image ratios for each category */
+.portfolio-item[data-category="logos"] {
+    aspect-ratio: 1/1; /* Square for logos */
+}
+
+.portfolio-item[data-category="thumbnails"],
+.portfolio-item[data-category="esports"] {
+    aspect-ratio: 16/9; /* Wide rectangle for thumbnails/esports */
+}
+
+.portfolio-item[data-category="posters"] {
+    /* Posters can be any size - will maintain original ratio */
+    height: auto;
+}
+
 
 .portfolio-overlay {
     position: absolute;
@@ -574,6 +613,34 @@ section {
 .social-links a:hover {
     background-color: var(--primary-color);
     transform: translateY(-5px);
+}
+
+/* Social Icons Update */
+.social-links a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--dark-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-5px);
+}
+
+/* Facebook blue on hover */
+.social-links a .fa-facebook-f:hover {
+    color: #1877f2;
+}
+
+/* Discord purple on hover */
+.social-links a .fa-discord:hover {
+    color: #5865f2;
 }
 
 /* Footer */
