@@ -1,42 +1,17 @@
+/* ... (keep previous styles until portfolio section) ... */
 
-
-/* as;kfhipugfiuhwdiuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuf*/
-/* Base Styles */
-
-
-/* ... (keep previous base s
-
-/* Carousel Updates */
-.carousel-section {
-    padding: 80px 0;
-}
-
-.carousel {
-    max-width: 1200px;
-    margin: 40px auto 0;
-}
-
-.carousel-item img {
-    height: 500px;
-    object-fit: contain;
-    background-color: var(--dark-secondary);
-}
-
-.carousel-item:nth-child(odd) img {
-    aspect-ratio: 16/9;
-}
-
-.carousel-item:nth-child(even) img {
-    aspect-ratio: 1/1;
-}
-
-/* Portfolio Section Updates */
+/* Portfolio Section */
 .portfolio {
+    background-color: var(--dark-secondary);
     padding: 80px 0;
 }
 
 .portfolio-category {
-    margin-bottom: 60px;
+    margin-bottom: 80px;
+}
+
+.portfolio-category:last-child {
+    margin-bottom: 0;
 }
 
 .portfolio-category h3 {
@@ -47,20 +22,56 @@
     border-bottom: 2px solid var(--primary-color);
 }
 
-.portfolio-grid {
+/* Logo Grid - 4 per row */
+.logo-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: var(--spacing);
-    margin-top: 20px;
+}
+
+/* Thumbnail Grid - 3 per row */
+.thumbnail-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing);
+}
+
+/* Poster Grid - flexible sizing */
+.poster-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing);
+}
+
+/* Cover Grid - flexible sizing */
+.cover-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: var(--spacing);
 }
 
 .portfolio-item {
     position: relative;
     border-radius: var(--border-radius);
     overflow: hidden;
-    background-color: var(--dark-secondary);
+    background-color: var(--dark-bg);
     transition: var(--transition);
-    height: 300px;
+}
+
+/* Square aspect ratio for logos */
+.logo-grid .portfolio-item {
+    aspect-ratio: 1/1;
+}
+
+/* 16:9 aspect ratio for thumbnails */
+.thumbnail-grid .portfolio-item {
+    aspect-ratio: 16/9;
+}
+
+/* Flexible aspect ratio for posters and covers */
+.poster-grid .portfolio-item,
+.cover-grid .portfolio-item {
+    height: auto;
 }
 
 .portfolio-item img {
@@ -86,6 +97,7 @@
     color: white;
     text-align: center;
     padding: 20px;
+    pointer-events: none;
 }
 
 .portfolio-overlay h3 {
@@ -105,7 +117,53 @@
     transform: scale(1.05);
 }
 
-/* Watermark Styles */
+/* Lightbox Styles */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow: auto;
+}
+
+.lightbox-content {
+    display: block;
+    margin: auto;
+    max-width: 90%;
+    max-height: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.close-lightbox {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.lightbox-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: white;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Watermark Protection */
 .watermark {
     position: absolute;
     top: 0;
@@ -115,49 +173,42 @@
     background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400"><text x="50%" y="50%" fill="rgba(255,255,255,0.1)" font-family="Arial" font-size="40" font-weight="bold" text-anchor="middle" dominant-baseline="middle" transform="rotate(-45 200 200)">YOURNAME</text></svg>');
     pointer-events: none;
     z-index: 2;
-}
-
-/* Social Links */
-.social-links {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 30px;
-}
-
-.social-links a {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    background-color: var(--dark-secondary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    transition: var(--transition);
-}
-
-.social-links a:hover {
-    transform: translateY(-5px);
-}
-
-.social-links a:nth-child(1):hover { /* Facebook */
-    background-color: #1877f2;
-    color: white;
-}
-
-.social-links a:nth-child(2):hover { /* Instagram */
-    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-    color: white;
-}
-
-.social-links a:nth-child(3):hover { /* Discord */
-    background-color: #5865f2;
-    color: white;
+    user-select: none;
 }
 
 /* ... (keep the rest of your existing styles) ... */
 
-/* as;kfhipugfiuhwdiuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuf*/
+/* Responsive Grid Adjustments */
+@media (max-width: 992px) {
+    .logo-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .thumbnail-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
 
+@media (max-width: 768px) {
+    .logo-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .thumbnail-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .poster-grid,
+    .cover-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
 
+@media (max-width: 576px) {
+    .logo-grid,
+    .thumbnail-grid,
+    .poster-grid,
+    .cover-grid {
+        grid-template-columns: 1fr;
+    }
+}
