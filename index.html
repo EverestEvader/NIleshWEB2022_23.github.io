@@ -1,206 +1,453 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Nilesh Karmacharrya.</title>
-        <link rel="icon" type="image/gif" href="imgss/nilesh.png"/>
-        <link rel="stylesheet" href="forsite.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-     
-    </head>
-    <body>
-
-<!--Navigation Bar -->
-        
-        <div class="dai">
-
-<!-- Directly move towards top-->
-
-            <section id="top"></section>
-            <div class="nav-bar">
-                
-                <a href="index.html"><img src="imgss/nilesh.png" width="150px" alt="official logo" class="logoo"></a> <p><b>Nilesh Karmacharya</b></p>
-                <nav>
-
-            <ul id="menuList">
-
-                <li><a href=""></a></li>
-                <li><a href="#socialss">SOCIALS</a></li>
-                <li><a href="">PORTFOLIO</a></li>
-                <li><a href="">CONTACTS</a></li>
-                <li><a href="">ABOUT US</a></li>
-
-            </ul>
-            
-            <img src="imgss/sun.png" id="icon">  
-            </nav>
-
-            <img src="imgss/menuicon.png" class="menulogo" 
-            onclick="togglemenu()"> 
- 
-           </div>
-         
-           <div class="info">
-            <h1>It's <span>Nilesh</span> Karmacharya.</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br> A voluptatibus laudantium totam, 
-                placeat tempore molestiae officiis illum incidunt<br> non corrupti expedita sint modi saepe 
-                culpa voluptatem.Nilesh Karmacharya.
-               </p>
-            <a href="alllink.html">Class/Lab Assignment Here</a>
-            <a href="https://www.instagram.com/_nils_dzns/">
-                View my Recent works here.</a>
-           </div>
-        <!--N wala logo-->
-           <!--<div class="img-area">
-            <img src="imgss/nileshshadow.png" class="back-img">
-            <img src="imgss/nilesh.png" class="main-img">
-           </div>-->
-
-<!--Image link // box shaped -->
-
-           <div class="container">
-            <div class="box">
-                <a href="https://en.wikipedia.org/wiki/Artificial_intelligence">
-                <img src="imgss/vampirewomen.png" width="250px"></a>
-            </div>
-            <div class="box">
-                <a href="https://en.wikipedia.org/wiki/Artificial_intelligence">
-                <img src="imgss/armytiger.png" width="250px"></a>
-                </div>
-                <div class="box">
-                    <a href="https://en.wikipedia.org/wiki/Artificial_intelligence">
-                    <img src="imgss/alien.png" width="250px"></a>
-                    </div>
-                    <div class="box">
-                        <a href="https://en.wikipedia.org/wiki/Artificial_intelligence">
-                        <img src="imgss/einstein.png" width="250px"></a>
-                        </div>
-                        
-        </div>
-
-        <div class="container2">
-            <div class="box2">
-                <a href="https://en.wikipedia.org/wiki/Artificial_intelligence">
-                <img src="imgss/ghostsss.png" width="250px"></a>
-            </div>
-            <div class="box2">
-                <a href="https://en.wikipedia.org/wiki/Artificial_intelligence">
-                <img src="imgss/spaceshuttle.png" width="250px"></a>
-                </div>
-                <div class="box2">
-                    <a href="https://en.wikipedia.org/wiki/Artificial_intelligence">
-                    <img src="imgss/sciwomen.png" width="250px"></a>
-                    </div>
-                    <div class="box2">
-                        <a href="https://en.wikipedia.org/wiki/Artificial_intelligence">
-                        <img src="imgss/bearandman.png" width="250px"></a>
-                        </div>
-                        
-
-        </div>
-
-        <div class="container3">
-            <div class="box3">
-                <a href="https://en.wikipedia.org/wiki/Artificial_intelligence">
-                <img src="imgss/kukur.png" width="250px"></a>
-            </div>
-            <div class="box3">
-                <a href="https://en.wikipedia.org/wiki/Artificial_intelligence">
-                <img src="imgss/badbunny.png" width="250px"></a>
-                </div>
-                <div class="box3">
-                    <a href="https://en.wikipedia.org/wiki/Artificial_intelligence">
-                    <img src="imgss/devill.png" width="250px"></a>
-                    </div>
-                    <div class="box3">
-                        <a href="https://en.wikipedia.org/wiki/Artificial_intelligence">
-                        <img src="imgss/billu.png" width="250px"></a>
-                        </div>
-                        
-
-        </div>
-
-       <div class="mathi">
-        <a href="#top">Go to top</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Name | Graphic Designer</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Preloader -->
+    <div class="preloader">
+      <div class="loader"></div>
     </div>
-     
-    
-    
-    <!--  ##### SOCIALS #####  -->
 
-       <!-- <section id="socialss">
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="container">
+        <a href="#" class="logo">Your<span>Name</span></a>
+        <div class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="hamburger">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1 class="hero-title">I'm <span>Your Name</span></h1>
+          <h2 class="hero-subtitle">Graphic Designer & Visual Artist</h2>
+          <p class="hero-text">
+            Creating stunning visuals that tell stories and captivate audiences.
+          </p>
+          <div class="hero-buttons">
+            <a href="#portfolio" class="btn btn-primary">View My Work</a>
+            <a href="#contact" class="btn btn-secondary">Hire Me</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <div class="image-wrapper">
+            <!-- Replace with your profile image -->
+            <img src="images/profile-placeholder.jpg" alt="Your Name" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">About <span>Me</span></h2>
+          <p class="section-subtitle">Get to know me better</p>
+        </div>
+        <div class="about-content">
+          <div class="about-image">
+            <!-- Replace with your about image -->
+            <img src="images/about-placeholder.jpg" alt="About Me" />
+          </div>
+          <div class="about-text">
+            <h3>Who am I?</h3>
+            <p>
+              I'm a passionate graphic designer with 5+ years of experience
+              creating visually stunning designs that communicate messages
+              effectively. My work spans branding, digital design, print media,
+              and more.
+            </p>
+            <p>
+              I believe in the power of design to transform ideas into
+              compelling visual stories that resonate with audiences.
+            </p>
+            <div class="about-details">
+              <div class="detail-item">
+                <span>Name:</span>
+                <p>Your Name</p>
+              </div>
+              <div class="detail-item">
+                <span>Email:</span>
+                <p>your.email@example.com</p>
+              </div>
+              <div class="detail-item">
+                <span>From:</span>
+                <p>Your City, Country</p>
+              </div>
+              <div class="detail-item">
+                <span>Experience:</span>
+                <p>5+ Years</p>
+              </div>
+            </div>
+            <a href="#" class="btn btn-primary">Download CV</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">My <span>Skills</span></h2>
+          <p class="section-subtitle">What I excel at</p>
+        </div>
+        <div class="skills-content">
+          <div class="skills-description">
+            <h3>My Creative Skills</h3>
+            <p>
+              I've honed my skills through years of practice and professional
+              projects. Here are some of my core competencies that help me
+              deliver exceptional design solutions.
+            </p>
+            <a href="#portfolio" class="btn btn-primary">See My Work</a>
+          </div>
+          <div class="skills-progress">
+            <!-- Skill bars - adjust percentages as needed -->
+            <div class="skill-item">
+              <div class="skill-info">
+                <span>Adobe Photoshop</span>
+                <span>95%</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress" style="width: 95%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span>Adobe Illustrator</span>
+                <span>90%</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress" style="width: 90%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span>Adobe InDesign</span>
+                <span>85%</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress" style="width: 85%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span>UI/UX Design</span>
+                <span>80%</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress" style="width: 80%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span>Brand Identity</span>
+                <span>92%</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress" style="width: 92%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">My <span>Portfolio</span></h2>
+          <p class="section-subtitle">Featured Works</p>
+        </div>
+        <div class="portfolio-filter">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="branding">Branding</button>
+          <button class="filter-btn" data-filter="print">Print</button>
+          <button class="filter-btn" data-filter="digital">Digital</button>
+          <button class="filter-btn" data-filter="illustration">
+            Illustration
+          </button>
+        </div>
+        <div class="portfolio-grid">
+          <!-- Portfolio items will be added dynamically via JavaScript -->
+          <!-- Replace these with your actual work samples -->
+          <div class="portfolio-item" data-category="branding">
+            <img src="images/work1.jpg" alt="Project 1" />
+            <div class="portfolio-overlay">
+              <h3>Brand Identity</h3>
+              <p>Client: XYZ Company</p>
+              <a href="#" class="portfolio-link"
+                ><i class="fas fa-search"></i
+              ></a>
+            </div>
+          </div>
+          <div class="portfolio-item" data-category="print">
+            <img src="images/work2.jpg" alt="Project 2" />
+            <div class="portfolio-overlay">
+              <h3>Magazine Layout</h3>
+              <p>Client: ABC Publications</p>
+              <a href="#" class="portfolio-link"
+                ><i class="fas fa-search"></i
+              ></a>
+            </div>
+          </div>
+          <div class="portfolio-item" data-category="digital">
+            <img src="images/work3.jpg" alt="Project 3" />
+            <div class="portfolio-overlay">
+              <h3>Website Design</h3>
+              <p>Client: DEF Tech</p>
+              <a href="#" class="portfolio-link"
+                ><i class="fas fa-search"></i
+              ></a>
+            </div>
+          </div>
+          <div class="portfolio-item" data-category="illustration">
+            <img src="images/work4.jpg" alt="Project 4" />
+            <div class="portfolio-overlay">
+              <h3>Character Design</h3>
+              <p>Personal Project</p>
+              <a href="#" class="portfolio-link"
+                ><i class="fas fa-search"></i
+              ></a>
+            </div>
+          </div>
+          <div class="portfolio-item" data-category="branding">
+            <img src="images/work5.jpg" alt="Project 5" />
+            <div class="portfolio-overlay">
+              <h3>Logo Design</h3>
+              <p>Client: GHI Startup</p>
+              <a href="#" class="portfolio-link"
+                ><i class="fas fa-search"></i
+              ></a>
+            </div>
+          </div>
+          <div class="portfolio-item" data-category="print">
+            <img src="images/work6.jpg" alt="Project 6" />
+            <div class="portfolio-overlay">
+              <h3>Packaging Design</h3>
+              <p>Client: JKL Foods</p>
+              <a href="#" class="portfolio-link"
+                ><i class="fas fa-search"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Client <span>Testimonials</span></h2>
+          <p class="section-subtitle">What people say about my work</p>
+        </div>
+        <div class="testimonials-slider">
+          <div class="testimonial-item active">
+            <div class="testimonial-content">
+              <i class="fas fa-quote-left"></i>
+              <p>
+                Working with [Your Name] was an absolute pleasure. Their
+                attention to detail and creative vision transformed our brand
+                identity beyond our expectations.
+              </p>
+              <div class="testimonial-author">
+                <img src="images/client1.jpg" alt="Client 1" />
+                <div class="author-info">
+                  <h4>Sarah Johnson</h4>
+                  <p>CEO, XYZ Company</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-item">
+            <div class="testimonial-content">
+              <i class="fas fa-quote-left"></i>
+              <p>
+                The designs delivered were not only visually stunning but also
+                perfectly captured our brand's essence. Highly recommend for any
+                design project!
+              </p>
+              <div class="testimonial-author">
+                <img src="images/client2.jpg" alt="Client 2" />
+                <div class="author-info">
+                  <h4>Michael Chen</h4>
+                  <p>Marketing Director, ABC Corp</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-item">
+            <div class="testimonial-content">
+              <i class="fas fa-quote-left"></i>
+              <p>
+                Exceptional work! [Your Name] took our vague ideas and turned
+                them into a cohesive, beautiful design system that we use across
+                all our platforms.
+              </p>
+              <div class="testimonial-author">
+                <img src="images/client3.jpg" alt="Client 3" />
+                <div class="author-info">
+                  <h4>Emily Rodriguez</h4>
+                  <p>Founder, DEF Startup</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-nav">
+          <button class="testimonial-prev">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="testimonial-next">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Get In <span>Touch</span></h2>
+          <p class="section-subtitle">Let's work together</p>
+        </div>
+        <div class="contact-content">
+          <div class="contact-info">
+            <h3>Contact Information</h3>
+            <p>
+              Feel free to reach out for collaborations, job opportunities, or
+              just to say hello!
+            </p>
+            <div class="info-item">
+              <i class="fas fa-envelope"></i>
+              <div class="info-content">
+                <h4>Email</h4>
+                <p>your.email@example.com</p>
+              </div>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-phone"></i>
+              <div class="info-content">
+                <h4>Phone</h4>
+                <p>+1 (123) 456-7890</p>
+              </div>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <div class="info-content">
+                <h4>Location</h4>
+                <p>Your City, Country</p>
+              </div>
+            </div>
             <div class="social-links">
-                <a href="https://www.facebook.com/people/Nilesh-Karmacharya/pfbid0kNdAGZrb5P1wiXM9dQfsAK8M9nTEngCntyizctha498UNCRAJLAgrmTh1D2YvjkAl/?mibextid=ZbWKwL">
-                    <i class="fab fa-facebook"></i></a>
-                <a href="https://www.instagram.com/ishouldbestudyn/?igshid=MzNlNGNkZWQ4Mg%3D%3D">
-                    <i class="fab fa-instagram"></i></a>
-                    <a href="https://discord.com/users/490886210529656832">
-                        <i class="fab fa-discord"></i></a>
-                <a href="https://twitter.com/4reshMeat">
-                    <i class="fab fa-twitter"></i></a>
-              </div>-->
+              <a href="#"><i class="fab fa-behance"></i></a>
+              <a href="#"><i class="fab fa-dribbble"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+          <div class="contact-form">
+            <form id="contactForm">
+              <div class="form-group">
+                <input type="text" id="name" placeholder="Your Name" required />
+              </div>
+              <div class="form-group">
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="Your Email"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <input type="text" id="subject" placeholder="Subject" />
+              </div>
+              <div class="form-group">
+                <textarea
+                  id="message"
+                  rows="5"
+                  placeholder="Your Message"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
 
-              <footer class="footer">
-                <section id="socialss">
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/people/Nilesh-Karmacharya/pfbid0kNdAGZrb5P1wiXM9dQfsAK8M9nTEngCntyizctha498UNCRAJLAgrmTh1D2YvjkAl/?mibextid=ZbWKwL">
-                            <i class="fab fa-facebook"></i></a>
-                        <a href="https://www.instagram.com/ishouldbestudyn/?igshid=MzNlNGNkZWQ4Mg%3D%3D">
-                            <i class="fab fa-instagram"></i></a>
-                            <a href="https://discord.com/users/490886210529656832">
-                                <i class="fab fa-discord"></i></a>
-                        <a href="https://twitter.com/4reshMeat">
-                            <i class="fab fa-twitter"></i></a>
-                      </div>
-                <p>&copy; nileshk. All rights reserved.</p>
-              </footer>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-about">
+            <a href="#" class="logo">Your<span>Name</span></a>
+            <p>
+              Creating impactful visual experiences through thoughtful design
+              and creative solutions.
+            </p>
+          </div>
+          <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#skills">Skills</a></li>
+              <li><a href="#portfolio">Portfolio</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-newsletter">
+            <h3>Newsletter</h3>
+            <p>Subscribe to get updates on my latest work.</p>
+            <form class="newsletter-form">
+              <input type="email" placeholder="Your Email" />
+              <button type="submit"><i class="fas fa-paper-plane"></i></button>
+            </form>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; <span id="year"></span> Your Name. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
 
+    <!-- Back to Top Button -->
+    <a href="#home" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
 
-        </div>  
-        
-        </section>
-        <section id="top"></section>
-
-    
-          
-
-
-
-
-
-
-        <script>
-            var icon=document.getElementById("icon");
-            icon.onclick=function(){
-                document.body.classList.toggle("dark-theme");
-                if(document.body.classList.contains("dark-theme")){
-                icon.src="imgss/moon.png";
-                }else{
-                    icon.src="imgss/sun.png";
-                }
-            }
-        </script>
-
-        <script>   
-
-        var menuList = document.getElementById("menuList");
-        
-        menuList.style.maxHeight ="0px";
-        
-        function togglemenu(){
-        
-            if(menuList.style.maxHeight == "0px")
-        {
-            menuList.style.maxHeight = "130px";
-        }
-        else{
-            menuList.style.maxHeight = "0px";
-        }
-        }
-        
-        </script>
-   <!--lavander color= 9873AC--> 
-
-</body>
+    <!-- Scripts -->
+    <script src="js/script.js"></script>
+  </body>
 </html>
