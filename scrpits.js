@@ -2,20 +2,28 @@ document.addEventListener('DOMContentLoaded', function() {
     // ======================
     // Navigation Functionality
     // ======================
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
     
     // Mobile menu toggle
     hamburger.addEventListener('click', function() {
         this.classList.toggle('active');
         navLinks.classList.toggle('active');
+
+       // Toggle body overflow to prevent scrolling when menu is open
+        if (navLinks.classList.contains('active')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
     });
 
-    // Close mobile menu when clicking a link
+    // Close menu when clicking a link
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', function() {
             hamburger.classList.remove('active');
             navLinks.classList.remove('active');
+            document.body.style.overflow = 'auto';
         });
     });
 
@@ -28,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
             navbar.classList.remove('scrolled');
         }
     });
-
+    
     // ======================
     // Back to Top Button
     // ======================
@@ -93,7 +101,6 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
-
     // Show protection modal
     function showProtectedModal() {
         protectedModal.style.display = 'block';
