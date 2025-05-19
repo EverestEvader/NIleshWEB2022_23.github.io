@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Apply protection to all portfolio images
     function protectImages() {
-        document.querySelectorAll('.portfolio-item, .client-item, .testimonial-author').forEach(item => {
+        document.querySelectorAll('.hero-logo, .zigzag-image, .portfolio-item, .client-item, .testimonial-author').forEach(item => {
             // Add watermark overlay
             //const watermark = document.createElement('div');
             //watermark.className = 'watermark';
@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Protection event listeners
     document.addEventListener('contextmenu', function(e) {
-        if (e.target.closest('.portfolio-item, .client-item, .testimonial-author')) {
+        if (e.target.closest('.hero-logo, .zigzag-image, .portfolio-item, .client-item, .testimonial-author')) {
             e.preventDefault();
             showProtectedModal();
         }
