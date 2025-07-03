@@ -59,7 +59,7 @@ img {
 }
 
 section {
-    padding: 80px 0;
+    padding: 60px 0;
 }
 
 .section-title {
@@ -88,6 +88,16 @@ section {
     background-color: var(--primary-dark);
     transform: translateY(-3px);
     box-shadow: var(--box-shadow);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    margin-left: 15px;
+}
+
+.btn-outline:hover {
+    background-color: var(--primary-color);
 }
 
 .bg-dark {
@@ -142,21 +152,20 @@ section {
 .nav-links a:hover::after {
     width: 100%;
 }
+
 /* Navigation Logo Styles */
 .logo {
-    font-weight: 700; /* Makes both names bold */
-    font-size: 1.5rem; /* Adjust size as needed */
+    font-weight: 700;
+    font-size: 1.5rem;
     display: flex;
     align-items: center;
-    color: white; /* Sets default color to white */
+    color: white;
 }
 
 .logo span {
-    color: #6c63ff; /* Purple color for the span */
-    /* Or use your variable: */
-    /* color: var(--primary-color); */
-    margin-left: 8px; /* Adds space between names */
-    display: inline-block; /* Ensures margin works properly */
+    color: var(--primary-color);
+    margin-left: 8px;
+    display: inline-block;
 }
 
 /* Hamburger Menu */
@@ -193,50 +202,6 @@ section {
 
 .hamburger .bar:nth-child(3) {
     bottom: 0;
-}
-
-/* Mobile Menu */
-@media (max-width: 768px) {
-    .hamburger {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-
-    .nav-links {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 70%;
-        height: 100vh;
-        background-color: var(--dark-bg);
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 30px;
-        transition: right 0.5s ease;
-        z-index: 1000;
-        padding-top: 80px;
-    }
-
-    .nav-links.active {
-        right: 0;
-    }
-
-    /* Hamburger animation when active */
-    .hamburger.active .bar:nth-child(1) {
-        transform: translateY(10px) rotate(45deg);
-        top: 50%;
-    }
-
-    .hamburger.active .bar:nth-child(2) {
-        opacity: 0;
-    }
-
-    .hamburger.active .bar:nth-child(3) {
-        transform: translateY(-10px) rotate(-45deg);
-        top: 50%;
-    }
 }
 
 /* Hero Section */
@@ -288,6 +253,11 @@ section {
     opacity: 0;
 }
 
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
 .hero-logo {
     flex: 1;
     display: flex;
@@ -302,75 +272,71 @@ section {
     opacity: 0;
 }
 
-/* Zigzag Sections */
-.zigzag {
+/* About Section */
+.about {
     padding: 80px 0;
 }
 
-.zigzag-item {
-    display: flex;
-    align-items: center;
-    gap: 50px;
-    margin-bottom: 80px;
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing);
 }
 
-.zigzag-item.reverse {
-    flex-direction: row-reverse;
-}
-
-.zigzag-content {
-    flex: 1;
-}
-
-.zigzag-content h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: var(--light-text);
-}
-
-.zigzag-content p {
-    color: var(--gray-text);
-    margin-bottom: 15px;
-    font-size: 1.1rem;
-}
-
-.zigzag-image {
-    flex: 1;
+.about-content {
+    background-color: var(--dark-secondary);
+    padding: 30px;
     border-radius: var(--border-radius);
-    overflow: hidden;
-    box-shadow: var(--box-shadow);
 }
 
-.zigzag-image img {
-    width: 100%;
-    height: auto;
-    transition: var(--transition);
+.about-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
 }
 
-.zigzag-image:hover img {
-    transform: scale(1.05);
+.about-content p {
+    margin-bottom: 15px;
+    color: var(--gray-text);
 }
 
 /* Portfolio Section */
-.portfolio {
-    background-color: var(--dark-secondary);
-    padding: 80px 0;
+.portfolio-categories {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
 }
 
 .portfolio-category {
-    margin-bottom: 80px;
+    margin-bottom: 40px;
 }
 
-.portfolio-category:last-child {
-    margin-bottom: 0;
+.category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
-.portfolio-category h3 {
+.category-header h3 {
     font-size: 1.8rem;
-    margin-bottom: 30px;
     color: var(--primary-color);
-    padding-bottom: 10px;
-    border-bottom: 2px solid var(--primary-color);
+}
+
+.view-all {
+    color: var(--primary-color);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.view-all i {
+    transition: var(--transition);
+}
+
+.view-all:hover i {
+    transform: translateX(5px);
 }
 
 /* Logo Grid - 4 per row */
@@ -390,23 +356,8 @@ section {
 /* Poster Grid - flexible sizing */
 .poster-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: var(--spacing);
-}
-
-/* Cover Grid - flexible sizing */
-.cover-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--spacing);
-}
-
-.portfolio-item {
-    position: relative;
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    background-color: var(--dark-bg);
-    transition: var(--transition);
 }
 
 /* Square aspect ratio for logos */
@@ -419,11 +370,17 @@ section {
     aspect-ratio: 16/9;
 }
 
-/* Flexible aspect ratio for posters and covers */
-.poster-grid .portfolio-item,
-.cover-grid .portfolio-item {
+/* Flexible aspect ratio for posters */
+.poster-grid .portfolio-item {
     height: fit-content;
-    width: fit-content;
+}
+
+.portfolio-item {
+    position: relative;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    background-color: var(--dark-bg);
+    transition: var(--transition);
 }
 
 .portfolio-item img {
@@ -453,12 +410,13 @@ section {
 }
 
 .portfolio-overlay h3 {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin-bottom: 10px;
 }
 
 .portfolio-overlay p {
     color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9rem;
 }
 
 .portfolio-item:hover .portfolio-overlay {
@@ -469,63 +427,74 @@ section {
     transform: scale(1.05);
 }
 
-/* Lightbox Styles */
-.lightbox {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
+/* Tournament Section */
+.tournament-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: var(--spacing);
+}
+
+.tournament-item {
+    background-color: var(--dark-bg);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.tournament-image {
+    position: relative;
+    aspect-ratio: 16/9;
+}
+
+.tournament-image img {
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    overflow: auto;
+    object-fit: cover;
 }
 
-.lightbox-content {
-    display: block;
-    margin: auto;
-    max-width: 90%;
-    max-height: 90%;
+.tournament-overlay {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.close-lightbox {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    color: white;
-    font-size: 40px;
-    font-weight: bold;
-    cursor: pointer;
-    z-index: 1001;
-}
-
-.lightbox-caption {
-    position: absolute;
-    bottom: 20px;
+    top: 0;
     left: 0;
     width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: var(--transition);
+    color: white;
     text-align: center;
-    color: white;
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
 }
 
-/* Watermark Protection */
-.watermark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400"><text x="50%" y="50%" fill="rgba(255,255,255,0.1)" font-family="Arial" font-size="40" font-weight="bold" text-anchor="middle" dominant-baseline="middle" transform="rotate(-45 200 200)">NILESH</text></svg>');
-    pointer-events: none;
-    z-index: 2;
-    user-select: none;
+.tournament-overlay h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.tournament-overlay p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.tournament-image:hover .tournament-overlay {
+    opacity: 1;
+}
+
+.tournament-info {
+    padding: 20px;
+}
+
+.tournament-info p {
+    color: var(--gray-text);
+}
+
+.view-all-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
 }
 
 /* Clients Carousel */
@@ -570,20 +539,11 @@ section {
 }
 
 @keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(calc(-200px * 6 - 50px * 5));
-    }
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-200px * 6 - 50px * 5)); }
 }
 
 /* Testimonials */
-.testimonials {
-    background-color: var(--dark-secondary);
-    padding: 80px 0;
-}
-
 .testimonial-carousel {
     max-width: 800px;
     margin: 0 auto;
@@ -664,19 +624,10 @@ section {
 }
 
 /* Contact */
-.contact {
-    padding: 80px 0;
-    background-color: var(--dark-bg);
-}
-
-.contact-content {
-    display: flex;
-    justify-content: center;
-}
-
 .contact-info {
     text-align: center;
     max-width: 500px;
+    margin: 0 auto;
 }
 
 .info-item {
@@ -783,7 +734,53 @@ section {
     font-size: 0.9rem;
 }
 
-/* Image Protection Styles */
+/* Lightbox Styles */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow: auto;
+}
+
+.lightbox-content {
+    display: block;
+    margin: auto;
+    max-width: 90%;
+    max-height: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.close-lightbox {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.lightbox-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: white;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Protection Styles */
 .protection-overlay {
     position: fixed;
     top: 0;
@@ -836,7 +833,9 @@ section {
 
 /* Disable text selection on images */
 .portfolio-item, 
-.portfolio-item * {
+.portfolio-item *,
+.tournament-item,
+.tournament-item * {
     user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -844,7 +843,8 @@ section {
 }
 
 /* Disable dragging */
-.portfolio-item img {
+.portfolio-item img,
+.tournament-item img {
     pointer-events: none;
 }
 
@@ -910,21 +910,24 @@ section {
         margin-bottom: 50px;
     }
 
+    .hero-buttons {
+        justify-content: center;
+    }
+
     .hero-logo img {
         max-width: 300px;
     }
 
-    .zigzag-item {
-        flex-direction: column;
-        gap: 30px;
+    .about-grid {
+        grid-template-columns: 1fr;
     }
 
-    .zigzag-item.reverse {
-        flex-direction: column;
+    .logo-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 
-    .zigzag-image {
-        order: -1;
+    .thumbnail-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .section-title {
@@ -946,14 +949,22 @@ section {
         gap: 30px;
         transition: right 0.5s ease;
         z-index: 1000;
+        padding-top: 80px;
     }
 
     .nav-links.active {
         right: 0;
     }
 
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
     .hamburger.active .bar:nth-child(1) {
         transform: translateY(10px) rotate(45deg);
+        top: 50%;
     }
 
     .hamburger.active .bar:nth-child(2) {
@@ -962,6 +973,7 @@ section {
 
     .hamburger.active .bar:nth-child(3) {
         transform: translateY(-10px) rotate(-45deg);
+        top: 50%;
     }  
 
     .hero h1 {
@@ -972,12 +984,8 @@ section {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .thumbnail-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .cover-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .tournament-grid {
+        grid-template-columns: 1fr;
     }
 
     .client-item {
@@ -992,6 +1000,15 @@ section {
 
     .hero h1 {
         font-size: 2.2rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .btn-outline {
+        margin-left: 0;
     }
 
     .testimonial-author {
@@ -1015,7 +1032,7 @@ section {
 
     .logo-grid,
     .thumbnail-grid,
-    .cover-grid {
+    .poster-grid {
         grid-template-columns: 1fr;
     }
 }

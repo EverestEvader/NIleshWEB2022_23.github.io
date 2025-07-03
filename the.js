@@ -73,12 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Apply protection to all portfolio images
     function protectImages() {
-        document.querySelectorAll('.hero-logo, .zigzag-image, .portfolio-item, .client-item, .testimonial-author').forEach(item => {
-            // Add watermark overlay
-            //const watermark = document.createElement('div');
-            //watermark.className = 'watermark';
-            //item.appendChild(watermark);
-            
+        document.querySelectorAll('.hero-logo, .portfolio-item, .client-item, .testimonial-author, .tournament-item').forEach(item => {
             // Disable pointer events on images
             const images = item.querySelectorAll('img');
             images.forEach(img => {
@@ -111,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Protection event listeners
     document.addEventListener('contextmenu', function(e) {
-        if (e.target.closest('.hero-logo, .zigzag-image, .portfolio-item, .client-item, .testimonial-author')) {
+        if (e.target.closest('.hero-logo, .portfolio-item, .client-item, .testimonial-author, .tournament-item')) {
             e.preventDefault();
             showProtectedModal();
         }
@@ -153,11 +148,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const lightboxImg = document.getElementById('lightbox-img');
     const lightboxCaption = document.querySelector('.lightbox-caption');
 
-    // Open lightbox
-    document.querySelectorAll('.portfolio-item').forEach(item => {
+    // Open lightbox for portfolio items
+    document.querySelectorAll('.portfolio-item, .tournament-image').forEach(item => {
         item.addEventListener('click', function() {
             const imgSrc = this.querySelector('img').src;
-            const title = this.querySelector('.portfolio-overlay h3')?.textContent || '';
+            const title = this.querySelector('.portfolio-overlay h3, .tournament-overlay h3')?.textContent || '';
             
             lightbox.style.display = 'block';
             document.body.style.overflow = 'hidden';
@@ -235,7 +230,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function pauseAnimation() {
-        animationPaused = false;
+        animationPaused = true;
         if (clientTrack) {
             clientTrack.style.animationPlayState = 'paused';
         }
