@@ -217,11 +217,22 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    
+    // ======================
+    // Clients Carousel (Continuous Animation)
+    // ======================
+    const clientTrack = document.querySelector('.client-track');
+    if (clientTrack) {
+        clientTrack.style.animationPlayState = 'running'; // Always animate
+    }
+
+    /*
     // ======================
     // Clients Carousel
     // ======================
     const clientTrack = document.querySelector('.client-track');
     let animationPaused = false;
+    
     
     function animateClients() {
         if (clientTrack && !animationPaused) {
@@ -230,17 +241,18 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function pauseAnimation() {
-        animationPaused = true;
-        if (clientTrack) {
-            clientTrack.style.animationPlayState = 'paused';
-        }
+    animationPaused = true;
+    if (clientTrack) {
+        clientTrack.style.animationPlayState = 'paused';
+    }
     }
     
     if (clientTrack) {
-        clientTrack.parentElement.addEventListener('mouseenter', pauseAnimation);
-        clientTrack.parentElement.addEventListener('mouseleave', animateClients);
-        animateClients();
+    clientTrack.parentElement.addEventListener('mouseenter', pauseAnimation);
+    clientTrack.parentElement.addEventListener('mouseleave', animateClients);
+    animateClients();
     }
+*/
 
     // ======================
     // Initialize Everything
