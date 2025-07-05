@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // ======================
     // Image Protection System
     // ======================
-    const protectionOverlay = document.createElement('div');
+    /*const protectionOverlay = document.createElement('div');
     protectionOverlay.className = 'protection-overlay';
     document.body.appendChild(protectionOverlay);
 
@@ -131,8 +131,122 @@ document.addEventListener('DOMContentLoaded', function() {
             return false;
         }
     });
+*/
+
 
     // ======================
+    // Image Protection System (Enhanced for Tournament Designs)
+    // ======================
+    const protectionOverlay = document.createElement('div');
+    protectionOverlay.className = 'protection-overlay';
+    document.body.appendChild(protectionOverlay);
+
+    const protectedModal = document.getElementById('protected-modal') || document.createElement('div');
+    protectedModal.id = 'protected-modal';
+    protectedModal.className = 'protected-modal';
+    protectedModal.innerHTML = `
+        <div class="protected-content">
+            <span class="close-modal">&times;</span>
+            <p>These designs are protected. Downloading is disabled to protect the artist's work.</p>
+            <p>For inquiries about usage or licensing, please contact me.</p>
+            <a href="index.html#contact" class="btn">Contact Me</a>
+        </div>
+    `;
+    document.body.appendChild(protectedModal);
+
+    // Apply protection to all portfolio and tournament images
+    function protectImages() {
+        // Select all images that need protection
+        const protectedSelectors = [
+            '.hero-logo img',
+            '.portfolio-item img',
+            '.tournament-image img',
+            '.tournament-item img',
+            '.detail-image img',
+            '.client-item img',
+            '.testimonial-author img'
+        ].join(', ');
+        
+        document.querySelectorAll(protectedSelectors).forEach(img => {
+            // Disable pointer events on images
+            img.style.pointerEvents = 'none';
+            img.setAttribute('draggable', 'false');
+            img.setAttribute('unselectable', 'on');
+            img.style.userSelect = 'none';
+            img.style.webkitUserDrag = 'none';
+            
+            // Add protection class
+            img.classList.add('protected-image');
+        });
+    }
+
+    // Show protection modal
+    function showProtectedModal() {
+        protectedModal.style.display = 'block';
+        protectionOverlay.style.pointerEvents = 'auto';
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Hide protection modal
+    function hideProtectedModal() {
+        protectedModal.style.display = 'none';
+        protectionOverlay.style.pointerEvents = 'none';
+        document.body.style.overflow = 'auto';
+    }
+
+    // Close modal handlers
+    document.querySelector('.close-modal')?.addEventListener('click', hideProtectedModal);
+    window.addEventListener('click', function(e) {
+        if (e.target === protectedModal) {
+            hideProtectedModal();
+        }
+    });
+
+    // ======================
+    // Enhanced Protection Event Listeners (Tournament Focus)
+    // ======================
+    document.addEventListener('contextmenu', function(e) {
+        if (e.target.closest('.protected-image, .portfolio-item, .tournament-item, .detail-section')) {
+            e.preventDefault();
+            showProtectedModal();
+        }
+    });
+
+    document.addEventListener('keydown', function(e) {
+        // Block Print Screen
+        if (e.key === 'PrintScreen') {
+            e.preventDefault();
+            showProtectedModal();
+        }
+        // Block Ctrl+S, Ctrl+C, etc.
+        if ((e.ctrlKey || e.metaKey) && ['s', 'c', 'p'].includes(e.key.toLowerCase())) {
+            e.preventDefault();
+            showProtectedModal();
+        }
+    });
+
+    document.addEventListener('dragstart', function(e) {
+        if (e.target.classList.contains('protected-image') || 
+            e.target.closest('.portfolio-item, .tournament-item, .detail-section')) {
+            e.preventDefault();
+            return false;
+        }
+    });
+
+    // Prevent opening image in new tab
+    document.addEventListener('auxclick', function(e) {
+        if (e.button === 1 && // Middle mouse button
+            e.target.classList.contains('protected-image')) {
+            e.preventDefault();
+            showProtectedModal();
+        }
+    });
+    // Protect lightbox images
+    lightbox.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+        showProtectedModal();
+    });
+     // ======================
     // Lightbox Functionality
     // ======================
     const lightbox = document.createElement('div');
@@ -175,11 +289,7 @@ document.addEventListener('DOMContentLoaded', function() {
         lightboxImg.src = '';
     }
 
-    // Protect lightbox images
-    lightbox.addEventListener('contextmenu', function(e) {
-        e.preventDefault();
-        showProtectedModal();
-    });
+
 
     // ======================
     // Testimonial Carousel

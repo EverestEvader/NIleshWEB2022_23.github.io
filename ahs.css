@@ -450,6 +450,15 @@ section {
     height: 100%;
     object-fit: cover;
 }
+.portfolio-full {
+    padding: 60px 0;
+}
+
+.btn-small {
+    padding: 8px 20px;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
 
 .tournament-overlay {
     position: absolute;
@@ -1096,5 +1105,143 @@ section {
     .thumbnail-grid,
     .poster-grid {
         grid-template-columns: 1fr;
+    }
+}
+/* [All original CSS content remains exactly the same until the end] */
+
+/* ====================== */
+/* New Styles Added Below */
+/* ====================== */
+
+/* Comment Section Styles */
+.image-comment {
+    margin-bottom: 15px;
+    padding: 15px;
+    background-color: rgba(30, 30, 30, 0.7);
+    border-radius: 8px;
+    border-left: 3px solid var(--primary-color);
+}
+
+.image-comment h4 {
+    color: var(--primary-color);
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+.image-comment p {
+    color: var(--gray-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Tournament Details Page */
+.tournament-detail-page {
+    padding: 60px 0;
+}
+
+.detail-section {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 60px;
+    text-align: left;
+}
+
+.detail-section.reverse {
+    flex-direction: row-reverse;
+}
+
+.detail-image {
+    flex: 1;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+}
+
+.detail-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.detail-content {
+    flex: 1;
+}
+
+.detail-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.detail-content ul {
+    margin: 15px 0;
+    padding-left: 20px;
+}
+
+.detail-content li {
+    margin-bottom: 8px;
+    color: var(--gray-text);
+}
+
+.tournament-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.stat-item {
+    background-color: var(--dark-bg);
+    padding: 12px 15px;
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+}
+
+.stat-item i {
+    color: var(--primary-color);
+    margin-right: 10px;
+    font-size: 1rem;
+}
+
+/* Comment Section */
+.image-comment {
+    margin: 40px 0;
+    padding: 20px;
+    background-color: rgba(30, 30, 30, 0.7);
+    border-radius: var(--border-radius);
+    border-left: 3px solid var(--primary-color);
+}
+
+.image-comment h4 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.image-comment p {
+    color: var(--gray-text);
+    font-style: italic;
+    line-height: 1.6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .detail-section {
+        flex-direction: column;
+    }
+    
+    .detail-section.reverse {
+        flex-direction: column;
+    }
+    
+    .tournament-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .detail-image,
+    .detail-content {
+        width: 100%;
     }
 }
