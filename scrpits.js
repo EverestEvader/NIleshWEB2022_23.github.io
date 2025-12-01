@@ -53,6 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+/*
 // ======================
     // Image Protection System
     // ======================
@@ -213,7 +214,10 @@ document.addEventListener('DOMContentLoaded', function() {
         e.preventDefault();
         showProtectedModal();
     });
+*/
 
+
+//ya samma protection wala na halau aaile lai  
     // ======================
     // Testimonial Carousel
     // ======================

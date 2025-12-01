@@ -133,7 +133,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 */
 
-
     // ======================
     // Image Protection System (Enhanced for Tournament Designs)
     // ======================
@@ -158,6 +157,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function protectImages() {
         // Select all images that need protection
         const protectedSelectors = [
+            'div.hero-logo img',
             '.hero-logo img',
             '.portfolio-item img',
             '.tournament-image img',
@@ -288,7 +288,6 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.style.overflow = 'auto';
         lightboxImg.src = '';
     }
-
 
 
     // ======================
